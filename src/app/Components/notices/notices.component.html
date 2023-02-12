@@ -1,0 +1,130 @@
+   <div class="sticky-top m-0 p-0">
+    <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top m-0 p-0" >
+      <a class="navbar-brand">Notice Board App</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-toggle" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse navbar-toggle justify-content-end" id="navbarNavAltMarkup">
+        <div class="navbar-nav " >   
+            <a class="nav-item nav-link" *ngIf="auth.isAdmin()" href="/AddNotice">Add Notice</a>
+          <a class="nav-item nav-link"  data-toggle="modal" data-target="#sign-out">Sign Out</a>
+
+        </div>
+      </div>
+    </nav>    
+  </div>
+ 
+  <div class="container">
+      <div class="notices" *ngFor="let n of notices; let i = index">
+        <div class="card">
+            <h5 class="card-header text-left">{{n.publishedDate}}</h5>
+            <div class="card-body">
+              <h4 class="card-title text-center"><b>{{n.noticeHeading}}</b></h4>
+              <p class="card-text text-center">{{n.noticeBody}}</p>
+              <br>
+              <h4 class="card-title text-right">- {{n.addedBy}}</h4>
+              <div class="btn" *ngIf="auth.isAdmin()"><a (click)="deleteNotice(n._id,i)" class="btn btn-outline-danger">Delete Notice</a></div>
+              
+            </div>
+          </div>
+      </div>      
+  </div>
+
+
+  
+  
+        <!--sign out model-->
+        <div class="modal fade" id="sign-out" role="dialog">
+          <div class="modal-dialog modal-lg">
+            
+            <div class="modal-content">
+              
+              <div class="modal-header">
+                <h4 class="modal-title">Do You Want To Leave Document Management System? </h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                
+              </div>
+            
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="logout()">Sign-out</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Stay-here</button>
+                
+              </div>
+    
+            </div>
+          </div>
+        </div> 
+        <!--end of model-->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+        <button class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarexample"
+        aria-controls="navbarexample" >
+          <span class="navbar-toggler-icon"></span> 
+        </button>
+      
+        <div class="collapse navbar-collapse justify-content-md-center" id="navbarexample">
+          <ul class="navbar-nav">
+      
+            <li class="nav-item">
+              <a  class="nav-link" routerLink="/"><i class="fas fa-home fa-lg mr-3"></i></a>
+            </li>
+          
+            <li class="nav-item" >
+              <a routerLink="/login" class="nav-link">Sign In</a>  
+            </li>
+      
+            <li class="nav-item" >
+              <a routerLink="/register" class="nav-link">Sign Up</a>
+            </li>
+      
+          
+      
+          </ul>
+         </div>
+      </nav>
+    
+    <div class="container">
+        <div class="jumbotron-mt-5">
+            <div class="col-sm-8 mx-auto">
+                <h1 class="text-center"> Welcome <br> to <br> Boarding App</h1>
+            </div>
+          </div>
+      </div>
+    
+    
+     -->
+    

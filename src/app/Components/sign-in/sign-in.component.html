@@ -1,0 +1,24 @@
+<div class="container">
+
+  <div class="row">
+      <div class="col-md-4 offset-md-4">
+      <div class="card text-center card  bg-default mb-3">
+        <div class="card-header">
+          LOGIN
+        </div>
+        <div class="card-body">
+             <input type="email" id="email" class="form-control input-sm chat-input" placeholder="Email" [(ngModel)]="email"/>
+          <br>
+          <input type="password" id="password" class="form-control input-sm chat-input" placeholder="Password" [(ngModel)]="password"/>
+        </div>
+        <div class="card-footer">
+          <a (click)="login()" class="btn btn-secondary">SIGN IN</a>
+          <br>
+          <br>
+          <div class="div"><h6><a href="/SignUp">Don't have an account? Sign Up here</a></h6></div>
+          
+        </div>
+      </div>
+  </div>
+  </div>
+</div>
